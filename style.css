@@ -1,0 +1,155 @@
+@font-face {
+    font-family: 'Kyiv Sans';
+    src: url('./fonts/KyivTypeSans-VarGX.woff2') format('woff2-variations');
+    font-weight: 0 1000;
+    font-display: swap;
+}
+
+:root {
+    --font-weight: 10;
+    --font-midline: 0;
+    --font-contrast: 250;
+
+}
+
+
+body {
+    margin: 0;
+    color: yellow;
+    background-color: #333;
+    position: relative;
+}
+
+
+.name {
+    font-size: calc(1.75rem + .2vw);
+}
+
+.job-title{
+    font-size: calc(1rem + .2vw);
+}
+
+.location {
+    font-size: calc(1.5rem + .2vw);
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 750ms ease-in-out; 
+}
+
+a:hover,
+a:focus {
+    color: whitesmoke;
+    cursor: pointer;
+    text-decoration: wavy; 
+}
+
+
+.card {
+    position: fixed;
+    background-color: #000;
+    margin:auto; 
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 20px #646363;
+    /* pulsing effect remove because got annoying */
+
+    /* animation: pulsing 1s infinite ease-in-out; */
+    
+}
+
+/* @keyframes pulsing {
+    0%,100%{transform: translate(-50%,-50%) scale(1);}
+    50%{transform: translate(-50%,-50%) scale(1.02);}
+   
+} */
+
+.info-wrapper:hover {
+    font-variation-settings: "wght" 500,"CONT" 1000, "MIDL" 0;
+    
+    
+}
+
+
+
+
+.container {
+   display :flex; 
+   justify-content :center; 
+   align-items :center; 
+   gap :2em;
+   margin :2em; 
+}
+
+img {
+   max-width :20vw; 
+   border: 19px solid #333, 2px green solid;
+   box-shadow: 
+    0 0 0 2px green, 
+    0 0 0 4px yellow; 
+    
+}
+
+.info-wrapper {
+
+/* variable fonts and controls*/
+font-family :'Kyiv Sans'; 
+text-align: center;
+font-variation-settings: "wght" 1,"CONT" 0, "MIDL" -1000;
+transition: font-variation-settings 2s;
+}
+
+@media screen and (min-width: 1153x) {
+    .card {
+        width: 45%;
+    }
+}
+
+@media screen and (max-width: 889px) {
+    .name,
+    .job-title,
+    .location {
+        
+        font-variation-settings: "wght" var(--font-weight),"CONT" var(--font-constrast), "MIDL" var(--font-midline);
+    }
+
+    .name {
+        font-size: .8rem;
+    }
+
+    .job-title {
+        font-size: .5rem;
+    }
+
+    .location {
+        font-size: .7rem
+    }
+
+    img {
+        width: 10vw;
+    }
+}
+
+
+
+
+/* .card {
+    position: fixed;
+    background-color: #000;
+    margin:auto; 
+    border-radius: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0px 0px 20px #646363;
+    animation: breathe 4s infinite;
+} */
+
+/* @keyframes breathe {
+    0%,100% {transform: translate(-50%,-50%) scale(1);}
+    25%,75% {transform: translate(-50%,-50%) scale(1.05);}
+} */
